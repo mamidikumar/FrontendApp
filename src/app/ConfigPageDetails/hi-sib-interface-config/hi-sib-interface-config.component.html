@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">IpAddr : {{HiSIBInterfaceConfig.IpAddr}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewHiSIBInterfaceConfig.IpAddr'
+                                placeholder={{NewHiSIBInterfaceConfig.IpAddr}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">UdpPort : {{HiSIBInterfaceConfig.UdpPort}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewHiSIBInterfaceConfig.UdpPort'
+                                placeholder={{NewHiSIBInterfaceConfig.UdpPort}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">TcpPort : {{HiSIBInterfaceConfig.TcpPort}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewHiSIBInterfaceConfig.TcpPort'
+                                placeholder={{NewHiSIBInterfaceConfig.TcpPort}} />
+                        </span></label>
+                    <br>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

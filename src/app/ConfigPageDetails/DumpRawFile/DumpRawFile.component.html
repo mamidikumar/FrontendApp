@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="col-md-10">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{PageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">CreateRawFile : {{dumpRawFile.CreateRawFile}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input type="radio" value=NO name=CreateRawFile [(ngModel)]=NewDumpRawFile.CreateRawFile> NO
+                            &nbsp;
+                            <input type="radio" value=YES name=CreateRawFile [(ngModel)]=NewDumpRawFile.CreateRawFile>
+                            YES &nbsp;
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <label class="content">FileName : {{dumpRawFile.FileName}}</label> &nbsp;
+                    <select [(ngModel)]=NewDumpRawFile.FileName *ngIf="IsAdmin || IsSec">
+                        <option *ngFor="let file of fileNameList" value={{file}}>{{file}}</option>
+                    </select>
+                </div>
+                <div class="clearfix"> </div>
+
+                <div class="panel-footer">
+                    <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                    <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

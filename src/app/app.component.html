@@ -1,0 +1,34 @@
+<div class='container-fluid' *ngIf="!LoginDialogStatus">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar"
+          aria-expanded="false" aria-controls="navbar">
+        </button>
+        <div>
+          <a class="navbar-brand" [routerLinkActive]="'active'" (click)='loginWindow()'>Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <app-LoginPage (getUserData)="getUserData($event)"></app-LoginPage>
+</div>
+
+<div class='container-fluid' *ngIf=LoginDialogStatus>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar"
+          aria-expanded="false" aria-controls="navbar">
+        </button>
+        <a class="navbar-brand" [routerLinkActive]="'active'">Home</a>
+        <a class="navbar-brand" (click)=closeWindow()>Logout </a>
+      </div>
+      <span class="nav navbar-nav navbar-right">
+        <a class="navbar-brand">Loggin as : {{PageTitle}}</a>
+      </span>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+
+</div>

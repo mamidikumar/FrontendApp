@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <div id="tab-rows">
+                        <div class="tab">
+                            <tr *ngFor='let list of SignalGroups; let i=index' [class.active]="i == selectedTab">
+                                <button class="tablink">
+                                    <h5 (click)='selectedListType(event, i)'>{{list.Type}}</h5>
+                                </button>
+
+                            </tr>
+
+                        </div>
+                        <div id="SignalGrp" class="tabcontent" *ngIf='Selectedbutton'>
+                            <tr>
+                                <h5>Type : {{SignalGroups[selected].Type}}
+                                    <span *ngIf="IsAdmin">
+                                        <input input="text" [(ngModel)]='NewSignalGroups[selected].Type'
+                                            placeholder={{NewSignalGroups[selected].Type}} />
+                                    </span>
+                                </h5>
+                            </tr>
+                            <tr>
+                                <h5>SigID : {{SignalGroups[selected].SigID}}
+                                    <span *ngIf="IsAdmin">
+                                        <input input="text" [(ngModel)]='NewSignalGroups[selected].SigID'
+                                            placeholder={{NewSignalGroups[selected].SigID}} />
+                                    </span>
+                                </h5>
+                            </tr>
+                            <tr>
+                                <h5>Label : {{SignalGroups[selected].Label}}
+                                    <span *ngIf="IsAdmin">
+                                        <input input="text" [(ngModel)]='NewSignalGroups[selected].Label'
+                                            placeholder={{NewSignalGroups[selected].Label}} /></span></h5>
+                            </tr>
+                            <tr>
+                                <h5>Position : {{SignalGroups[selected].Position}}
+                                    <span *ngIf="IsAdmin || IsSec">
+                                        <input input="text" [(ngModel)]='NewSignalGroups[selected].Position'
+                                            placeholder={{NewSignalGroups[selected].Position}} /></span> </h5>
+                            </tr>
+                            <tr>
+                                <h5>Sensitivity : {{SignalGroups[selected].Sensitivity}} &nbsp;
+                                    <span *ngIf="IsAdmin || IsSec">
+                                        <select [(ngModel)]=NewSignalGroups[selected].Sensitivity>
+                                            <option *ngFor="let sensitive of SensitivitySignalGroup" value={{sensitive}}>
+                                                {{sensitive}}</option>
+                                        </select>
+                                    </span></h5>
+
+                            </tr>
+                            <tr> Color : <span>{{SignalGroups[selected].Color}}</span> &nbsp;
+                                <input input='text' [(colorPicker)]='NewSignalGroups[selected].Color' #ignoredInput
+                                    [value]="color" [style.background]="color" [cpOutputFormat]="'hex'"
+                                    [(cpToggle)]="toggle" [cpOKButton]="true" [cpSaveClickOutside]="false"
+                                    [cpOKButtonClass]="'btn btn-primary btn-xs'" [(colorPicker)]="color" />
+                                <button #ignoredButton (click)="toggle=!toggle">Change color</button>
+                            </tr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

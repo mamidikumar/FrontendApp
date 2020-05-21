@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="col-md-7">
+    <div class="panel panel-primary">
+
+      <h2 class="panel-heading">
+        {{pageTitle}}
+      </h2>
+      <div class="panel-body">
+        <h3 class="card-title">Configuration</h3>
+        <p class="card-text">Login here for configuring the sensis setting.</p> &nbsp; &nbsp;
+        <div>
+          <label>Username: </label> &nbsp;
+          <input input="text" [(ngModel)]=username />
+        </div>
+        <div>
+          <label>Password:</label> &nbsp;
+          <input input="text" [(ngModel)]=password />
+        </div>
+        <div>
+          <button class="btn btn-success" [disabled]="!password" (click)="Submit()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

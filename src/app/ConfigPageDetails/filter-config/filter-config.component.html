@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">LowPassFilter : {{FilterConfig.LowPassFilter}}&nbsp;
+                        <span *ngIf="IsAdmin">
+                            <select [(ngModel)]=NewFilterConfig.LowPassFilter>
+                                <option *ngFor="let LP of LowPass" value={{LP}}>{{LP}}</option>
+                            </select>
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">HighPassFiltrer : {{FilterConfig.HighPassFiltrer}}&nbsp;
+                        <span *ngIf="IsAdmin">
+                            <select [(ngModel)]=NewFilterConfig.HighPassFiltrer>
+                                <option *ngFor="let HP of HighPass" value={{HP}}>{{HP}}</option>
+                            </select>
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">NotchFilter : {{FilterConfig.NotchFilter}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewFilterConfig.NotchFilter'
+                                placeholder={{NewFilterConfig.NotchFilter}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">FilerResetOnLeadDissconnect :
+                        {{FilterConfig.FilerResetOnLeadDissconnect}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input type="radio" value=NO name=FilerResetOnLeadDissconnect
+                                [(ngModel)]=NewFilterConfig.FilerResetOnLeadDissconnect> NO &nbsp;
+                            <input type="radio" value=YES name=FilerResetOnLeadDissconnect
+                                [(ngModel)]=NewFilterConfig.FilerResetOnLeadDissconnect> YES &nbsp;
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">DumpFilterData : {{FilterConfig.DumpFilterData}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input type="radio" value=NO name=DumpFilterData [(ngModel)]=NewFilterConfig.DumpFilterData>
+                            NO &nbsp;
+                            <input type="radio" value=YES name=DumpFilterData
+                                [(ngModel)]=NewFilterConfig.DumpFilterData> YES &nbsp;
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

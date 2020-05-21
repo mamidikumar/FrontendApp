@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">ProcessesTobeBooted : {{StateManagerConfig.ProcessesTobeBooted}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.ProcessesTobeBooted'
+                                placeholder={{NewStateManagerConfig.ProcessesTobeBooted}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">rollSizeKB : {{StateManagerConfig.rollSizeKB}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.rollSizeKB'
+                                placeholder={{NewStateManagerConfig.rollSizeKB}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">SCU_AE : {{StateManagerConfig.SCU_AE}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.SCU_AE'
+                                placeholder={{NewStateManagerConfig.SCU_AE}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">SCP_AE : {{StateManagerConfig.SCP_AE}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.SCP_AE'
+                                placeholder={{NewStateManagerConfig.SCP_AE}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">SCP_IP: {{StateManagerConfig.SCP_IP}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.SCP_IP'
+                                placeholder={{NewStateManagerConfig.SCP_IP}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">SCP_PORT: {{StateManagerConfig.SCP_PORT}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.SCP_PORT'
+                                placeholder={{NewStateManagerConfig.SCP_PORT}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">QUERYFILE: {{StateManagerConfig.QUERYFILE}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.QUERYFILE'
+                                placeholder={{NewStateManagerConfig.QUERYFILE}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">QUERYEXEC: {{StateManagerConfig.QUERYEXEC}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewStateManagerConfig.QUERYEXEC'
+                                placeholder={{NewStateManagerConfig.QUERYEXEC}} />
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

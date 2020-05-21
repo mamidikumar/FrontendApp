@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">WidthInPixel : {{ArtisMonitorConfig.WidthInPixel}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.WidthInPixel'
+                                placeholder={{NewArtisMonitorConfig.WidthInPixel}} />
+                        </span></label>
+                    <br>
+                    <label class="content">HeightInPixel : {{ArtisMonitorConfig.HeightInPixel}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.HeightInPixel'
+                                placeholder={{NewArtisMonitorConfig.HeightInPixel}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">WidthInMM : {{ArtisMonitorConfig.WidthInMM}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.WidthInMM'
+                                placeholder={{NewArtisMonitorConfig.WidthInMM}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">HeightInMM : {{ArtisMonitorConfig.HeightInMM}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.HeightInMM'
+                                placeholder={{NewArtisMonitorConfig.HeightInMM}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">SegemntWidth : {{ArtisMonitorConfig.SegemntWidth}}
+                        &nbsp;<span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.SegemntWidth'
+                                placeholder={{NewArtisMonitorConfig.SegemntWidth}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">SegmentHeight : {{ArtisMonitorConfig.SegmentHeight}}
+                        &nbsp;<span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.SegmentHeight'
+                                placeholder={{NewArtisMonitorConfig.SegmentHeight}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">Header : {{ArtisMonitorConfig.Header}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.Header'
+                                placeholder={{NewArtisMonitorConfig.Header}} />
+                        </span>
+                    </label>
+                    <br>
+                    <label class="content">FormMaximize :
+                        {{ArtisMonitorConfig.FormMaximize}}
+                        &nbsp;<span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewArtisMonitorConfig.FormMaximize'
+                                placeholder={{NewArtisMonitorConfig.FormMaximize}} />
+                        </span>
+                    </label>
+                    <br>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class='btn btn-success' (click)='SaveContent()'>Save</button>&nbsp;
+                <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>

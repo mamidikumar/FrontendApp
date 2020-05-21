@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">RawSignalFile : {{SimulatorConfig.RawSignalFile}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewSimulatorConfig.RawSignalFile'
+                                placeholder={{NewSimulatorConfig.RawSignalFile}} />
+                        </span>
+                    </label>
+                    <br>
+                    <div>
+                        <label class="content">KeepRunning : {{SimulatorConfig.KeepRunning}} &nbsp;
+                            <span *ngIf="IsAdmin">
+                                <input type="radio" value=false name=KeepRunning
+                                    [(ngModel)]=NewSimulatorConfig.KeepRunning>false &nbsp;
+                                <input type="radio" value=true name=KeepRunning
+                                    [(ngModel)]=NewSimulatorConfig.KeepRunning>true &nbsp;
+                            </span>
+                        </label>
+
+
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                    <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,19 @@
+#https://www.youtube.com/watch?v=etA5xiX5TCA
+#https://www.youtube.com/watch?v=1xo-0gCVhTU
+#https://www.youtube.com/watch?v=na2DqaoBlUc
+#base image
+FROM node:14.2.0-alpine3.10 AS builder
+WORKDIR '/app'
+COPY package.json ./
+RUN npm install
+RUN npm install -g @angular/cli
+COPY . . 
+RUN npm run build
+
+#https://mherman.org/blog/dockerizing-an-angular-app/
+#Step 2
+FROM nginx:1.17.10-alpine
+COPY --from=builder /app/dist/app /usr/share/nginx/html
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
+

@@ -1,0 +1,101 @@
+{
+	"SignalGroups":
+	[
+    {
+      "Type": "ECG_I",
+      "SigID": "1",
+      "Label": "I",
+      "Position": "85",
+      "Sensitivity": "10",
+      "Color": "0x65B230"
+    },
+    {
+      "Type": "ECG_II",
+      "SigID": "3",
+      "Label": "II",
+      "Position": "70",
+      "Sensitivity": "10",
+      "Color": "0x65B230"
+    },
+    {
+      "Type": "ECG_III",
+      "SigID": "5",
+      "Label": "III",
+      "Position": "55",
+      "Sensitivity": "10",
+      "Color": "0x65B230"
+    },
+    {
+      "Type": "SpO2",
+      "SigID": "12",
+      "Label": "Pleth",
+      "Position": "35",
+      "Sensitivity": "40",
+      "Color": "0x59C2E2"
+    }
+	],
+	"Waveform Presentation Configuration":
+	{
+		"SweepSpeed": "25",
+		"RenderMode": "1",
+		"CursorGap": "300",
+		"LineWidth": "1",
+		"Line Smoothening": "0"
+	},
+  "Artis Monitor Configuration":
+  {
+    "WidthInPixel": "3840",
+    "HeightInPixel": "2160",
+    "WidthInMM": "620.93",
+    "HeightInMM": "341.28",
+    "SegemntWidth": "1280",
+    "SegmentHeight": "1024",
+    "Header": "0",
+    "FormMaximize": "0"
+  },
+  "Simulator Configuration":
+  {
+    "RawSignalFile": "HiSIBHemo.raw",
+    "KeepRunning": "true"
+  },
+	"HiSIB Interface Configuration":
+	{
+		"IpAddr": "127.0.0.1",
+		"UdpPort": "6559",
+		"TcpPort": "6558"
+	},
+  "State Manager Configuration": 
+  {
+    "ProcessesTobeBooted": "Neocor.Titan.SignalAnalyser.Analyser.exe,Neocor.Titan.Simulator.exe,Neocor.Titan.RealTimeView.UIContainer.exe",
+    "rollSizeKB": "10000",
+    "SCU_AE": "WORKLISTSCU",
+    "SCP_AE": "WORKLISTSCP",
+    "SCP_IP": "10.83.37.20",
+    "SCP_PORT": "3000",
+    "QUERYFILE": "DCMTKOFFIS\\wlistqry\\wlistqry1.dcm",
+    "QUERYEXEC": "DCMTKOFFIS\\bin\\findscu.exe"
+  },
+  "Filter Configuration": 
+  {
+    "LowPassFilter": "LP_100",
+    "HighPassFiltrer": "HP_5",
+    "NotchFilter": "NOTCH_50V2",
+    "FilerResetOnLeadDissconnect": "NO",
+    "DumpFilterData": "NO"
+  },
+  "NIBP Configuration": 
+  {
+    "AutoStartTimeInMin": 3,
+    "LastReadingClearingTimeInMin": 3
+  },
+  "DumpRawFile": 
+  {
+    "CreateRawFile": "NO",
+    "FileName": "ELS_RAW_FILE.raw"
+  },
+  "StatusBar Configuration": 
+  {
+    "MessageTimeout": 6,
+    "RolloverTime": 1
+  }
+}

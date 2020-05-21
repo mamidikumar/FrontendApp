@@ -1,0 +1,21 @@
+<br>
+<div class="container">
+    <div class="col-md-5">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>Sensis Configuration Home Page</h3>
+                <button *ngIf="IsAdmin" class="btn btn-success" (click)="getFactorySettings()">get Factory
+                    Settings</button>
+            </div>
+            <div class="panel-body">
+                <div id="myverticalnav" class="btn-group">
+                    <tr *ngFor='let ConfigurationPageList of listOfHomePageConfigurations'>
+                        <button (click)="selectedTab(ConfigurationPageList)"> {{ConfigurationPageList}}</button>
+                    </tr>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

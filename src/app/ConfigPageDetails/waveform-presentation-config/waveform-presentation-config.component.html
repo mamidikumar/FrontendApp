@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="panel-body">
+                <div id="content-display">
+                    <label class="content">SweepSpeed : {{WaveformPresentationConfig.SweepSpeed}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewWaveformPresentationConfig.SweepSpeed'
+                                placeholder={{NewWaveformPresentationConfig.SweepSpeed}} />
+
+                        </span> </label>
+                    <br>
+                    <label class="content">RenderMode : {{WaveformPresentationConfig.RenderMode}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewWaveformPresentationConfig.RenderMode'
+                                placeholder={{NewWaveformPresentationConfig.RenderMode}} />
+                        </span> </label>
+                    <br>
+                    <label class="content">CursorGap : {{WaveformPresentationConfig.CursorGap}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewWaveformPresentationConfig.CursorGap'
+                                placeholder={{NewWaveformPresentationConfig.CursorGap}} />
+                        </span></label>
+                    <br>
+                    <label class="content">LineWidth : {{WaveformPresentationConfig.LineWidth}} &nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewWaveformPresentationConfig.LineWidth'
+                                placeholder={{NewWaveformPresentationConfig.LineWidth}} />
+                        </span> </label>
+                    <br>
+                    <label class="content">Line Smoothening : {{WaveformPresentationConfig["Line Smoothening"]}}&nbsp;
+                        <span *ngIf="IsAdmin">
+                            <input input="text" [(ngModel)]='NewWaveformPresentationConfig["Line Smoothening"]'
+                                placeholder={{NewWaveformPresentationConfigLine}}{{Smoothening}} />
+                        </span> </label>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class='btn btn-success' (click)='SaveContent()'>Save</button> &nbsp;
+                <button class='btn btn-warning' (click)='CancelContent()'>Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>

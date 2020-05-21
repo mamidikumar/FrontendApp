@@ -1,0 +1,13 @@
+# base image
+FROM node:12.7-alpine
+
+WORKDIR '/app'
+
+#Dependencies
+COPY package.json .
+RUN npm install
+COPY . .
+
+
+#Execute
+CMD ["ng" , "serve"]
