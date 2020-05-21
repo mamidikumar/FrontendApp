@@ -3,8 +3,10 @@ node_js:
   - "9"
 dist: trusty
 sudo: required
+services:
+    - docker    
 branches:
   only:
   - master
 before_script:
-  - npm install -g @angular/cli
+  - docker build -t mmamidi-frontendapp -f Dockerfile.dev .
