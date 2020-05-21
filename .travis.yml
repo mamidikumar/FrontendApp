@@ -10,3 +10,6 @@ branches:
   - master
 before_script:
   - docker build -t mmamidi-frontendapp -f Dockerfile.dev .
+
+script:
+  - docker run  mmamidi-frontendapp npm run test -- --coverage
